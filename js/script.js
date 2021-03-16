@@ -12,6 +12,7 @@ function showModal() {
     modal.classList.remove('hide');
     modal.classList.add('show', 'fade');
     document.body.style.overflow = 'hidden';
+    clearInterval(modalTimeOut);
 }
 
     btn.addEventListener('click', showModal);
@@ -29,9 +30,24 @@ function closeModal() {
         }
     });
 
+    document.addEventListener('keydown', (e) => {
+        if (modal.classList.contains('show') && e.code == 'Escape') {
+            closeModal();
+        }
+    });
 
+    const modalTimeOut = setTimeout(showModal, 20000);
 
+    function showModalbyScroll() {
+        if (document.documentElement.clientHeight + window.pageYOffset >= document.documentElement.scrollHeight - 1) {
+            showModal();
+            window.removeEventListener('scroll', showModalbyScroll);
+        }
+    }
 
+    window.addEventListener('scroll', showModalbyScroll);
+
+    
 // Course cards 
 
 class CourseCard {
