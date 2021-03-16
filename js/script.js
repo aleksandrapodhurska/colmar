@@ -1,14 +1,38 @@
 'use strict';
 
-// const newsItem = document.querySelectorAll('news__item'),
-//       newsImg = document.querySelectorAll('.news__img'),
-//       newsTitle = document.querySelectorAll('.news__title'),
-//       newsText = document.querySelectorAll('news__text'),
-//       wrapper = document.querySelector('.wrapper'),
-//       mainNewsContainer = document.querySelector('.main__news');
-
-
 window.addEventListener('DOMContentLoaded', () => {
+
+// Modal
+
+const modal = document.querySelector('.modal'),
+      btn = document.querySelector('.btn__banner'),
+      closeBtn = document.querySelector('[data-close]');
+
+function showModal() {
+    modal.classList.remove('hide');
+    modal.classList.add('show', 'fade');
+    document.body.style.overflow = 'hidden';
+}
+
+    btn.addEventListener('click', showModal);
+
+function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show', 'fade');
+    document.body.style.overflow = '';
+}
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+
+
+
+// Course cards 
 
 class CourseCard {
     constructor(src, alt, title, subtitle, descr, parentSelector, ...classes) {
