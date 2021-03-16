@@ -1,0 +1,578 @@
+/* General Rules */
+
+body {
+    color: #4a4a4a;
+    background-color: #fafafa;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.content {
+    flex: 1 1 auto;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media all and (max-width: 992px) {
+    .container {
+        max-width: 950px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 835px) {
+    .container {
+        max-width: 770px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .container {
+        max-width: none;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+/* Header */
+
+.header {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.menu_mobile {
+    display: none;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.logo__img {
+    display: inline-block;
+    height: 100%;
+}
+
+.logo__title {
+    font-weight: bold;
+    color: #4a4a4a;
+    text-transform: uppercase;
+}
+
+.logo__title span {
+    color: #d8d8d8;
+}
+
+.menu {
+    display: inline-flex;
+}
+
+.menu__item {
+    margin-left: 16px;
+
+    transition: color linear .2s;
+}
+
+a.menu__item:hover {
+    color: #d8d8d8;
+}
+
+@media all and (max-width: 767px) {
+
+    .nav,
+    .logo {
+        display: none;
+    }
+
+    .menu_mobile {
+        display: block;
+        width: 100%;
+    }
+
+    .menu_mobile ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+/* Banner */
+
+.banner {
+    background-color: #d8d8d8;
+    padding: 32px 24px;
+}
+
+.banner__row {
+    display: flex;
+}
+
+.banner__img-content {
+    flex: 0 0 60%;
+}
+
+.banner__img-content img {
+    max-width: 100%;
+}
+
+.banner__text-content {
+    flex: 1 1 auto;
+    padding: 0 0 0 40px;
+    margin: auto;
+}
+
+.banner__title {
+    font-size: 3.25rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 0 0 2rem 0;
+}
+
+.banner__subtitle {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 2rem 0;
+}
+
+.banner__button {
+    width: 300px;
+    padding: .5rem 0;
+    color: #ffffff;
+    background-color: #4a4a4a;
+    border-radius: 3px;
+
+    transition: all linear .2s;
+}
+
+.banner__button:hover {
+    color: #d8d8d8;
+    background-color: #242424;
+}
+
+@media all and (max-width: 992px) {
+
+    .banner__title {
+        font-size: 2rem;
+    }
+
+    .banner__subtitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media all and (max-width: 835px) {
+
+    .banner__text-content {
+        padding: 0 0 0 24px;
+    }
+
+    .banner__title {
+        font-size: 2rem;
+    }
+
+    .banner__subtitle {
+        font-size: 1.5rem;
+    }
+
+    .banner__button {
+        width: 150px;
+    }
+}
+
+@media all and (max-width: 767px) {
+    .banner__row {
+        flex-direction: column;
+    }
+
+    .banner__text-content {
+        margin: 24px 0 0 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:568px) {
+
+    .banner {
+        padding: 32px 16px;
+    }
+
+    .banner__text-content {
+        padding: 0;
+    }
+}
+
+
+/* Main */
+
+.main {
+    padding: 32px 24px;
+}
+
+.main__row {
+    display: flex;
+}
+
+.main__article {
+    flex: 0 0 60%;
+    flex-direction: column;
+    margin: 0 24px 0 0;
+}
+
+.article__img-content img {
+    max-width: 100%;
+}
+
+.article__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 32px 0 0 0;
+}
+
+.article__text {
+    margin: 24px 0;
+    padding: 0 24px 0 0;
+}
+
+.article__author {
+    letter-spacing: -.08em;
+}
+
+.main__news {
+    flex: 1 1 auto;
+    border-left: solid 1px rgb(224, 224, 224);
+}
+
+.news__item_mobile {
+    display: none;
+}
+
+.news__item {
+    display: flex;
+    padding: 16px 0 16px 16px;
+    border-bottom: solid 1px rgb(224, 224, 224);
+
+    transition: background-color linear .2s;
+}
+
+.news__item:first-child {
+    border-top: solid 1px rgb(224, 224, 224);
+}
+
+.news__item:hover {
+    background-color: #d8d8d8;
+}
+
+.news__img {
+    width: 35%;
+}
+
+.news__img img {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.news__text-content {
+    width: 65%;
+    margin: auto;
+    padding-left: 16px;
+}
+
+.news__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.news__text {
+    margin: 8px 0 0 0;
+}
+
+.news__link {
+    color: #479cfd;
+    margin: 8px 0 0 0;
+}
+
+@media all and (max-width: 767px) {
+    .main__row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main__news {
+        border-left: none;
+    }
+
+    .news__img {
+        width: 20%;
+    }
+
+    .news__text-content {
+        width: 80%;
+    }
+
+    .main__article {
+        margin: 0 0 24px 0;
+    }
+
+    .article__text {
+        padding: 0;
+    }
+}
+
+@media screen and (max-width:568px) {
+
+    .main {
+        padding: 32px 16px 0 16px;
+    }
+
+    .main__article {
+        display: none;
+    }
+
+    .news__item {
+        display: none;
+    }
+
+    .news__item_mobile {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 16px 0;
+    }
+
+    .news__item_mobile:hover {
+        background-color: #d8d8d8;
+    }
+
+    .news__img {
+        width: 100%;
+    }
+
+    .news__text-content {
+        width: 100%;
+        margin: 16px 0;
+    }
+}
+
+/* Courses */
+
+.courses {
+    background-color: #f3f5f5;
+    padding: 32px 0;
+}
+
+.courses .container {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.courses__column {
+    display: none;
+}
+
+.courses__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 32px 0 0 0;
+}
+
+.column__item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    background-color: #fafafa;
+    margin: 0 0 16px 0;
+}
+
+.column__img {
+    width: 100%;
+}
+
+.column__img img {
+    max-width: 100%;
+}
+
+.column__text-content {
+    margin: 24px 0;
+    padding: 0 16px;
+}
+
+.column__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.column__subtitle {
+    text-transform: uppercase;
+    margin: 8px 0 0 0;
+}
+
+.column__description {
+    margin: 8px 0 0 0;
+}
+
+@media all and (max-width: 767px) {
+    .column__item {
+        flex: 0 0 45%;
+    }
+}
+
+@media screen and (max-width: 568px) {
+
+    .courses__row {
+        display: none;
+    }
+
+    .courses__column {
+        display: flex;
+        flex-direction: column;
+        margin: 32px 0 0 0;
+    }
+
+    .course__item {
+        font-size: 1.5rem;
+        font-weight: bold;
+        background-color: #d8d8d8;
+        padding: 24px 16px;
+        margin: 0 0 8px 0;
+    }
+
+    .course__item:hover {
+        background-color: #e2e2e2;
+    }
+}
+
+/* Thesis */
+
+.thesis {
+    padding: 32px 24px;
+}
+
+.thesis__row {
+    display: flex;
+    margin: 32px 0;
+}
+
+.thesis__article {
+    flex: 0 0 60%;
+    flex-direction: column;
+    margin: 0 24px 0 0;
+}
+
+.thesis__video-content video {
+    max-width: 100%;
+}
+
+.thesis__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 32px 0 0 0;
+}
+
+.thesis__text {
+    margin: 24px 0;
+    padding: 0 24px 0 0;
+}
+
+.thesis__date {
+    letter-spacing: -.08em;
+}
+
+.thesis__news {
+    flex: 1 1 auto;
+    border-left: solid 1px rgb(224, 224, 224);
+}
+
+@media all and (max-width: 767px) {
+    .thesis__row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .thesis__news {
+        border-left: none;
+    }
+
+    .thesis__img {
+        width: 20%;
+    }
+
+    .thesis__text-content {
+        width: 80%;
+    }
+
+    .thesis__article {
+        margin: 0 24px 24px 0;
+    }
+}
+
+@media all and (max-width: 835px) {
+
+    .heading {
+        font-size: 2.25rem;
+    }
+
+    .news__title,
+    .column__title {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 658px) {
+
+    .thesis {
+        padding: 32px 16px 0 16px;
+    }
+
+    .thesis__article {
+        margin: 0;
+    }
+
+    .thesis__text {
+        margin: 24px 0;
+        padding: 0;
+    }
+}
+
+
+/* Footer */
+
+.footer {
+    /* height: 64px; */
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    background-color: #f3f5f5;
+}
+
+@media screen and (max-width: 568px) {
+    .footer__nav {
+        display: none;
+    }
+}
